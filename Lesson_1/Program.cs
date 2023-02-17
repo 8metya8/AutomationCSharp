@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace Lesson_1;
+class HelloWorld
+{
+    static void Main(string[] args)
+    {
+        string username;
+
+        Console.Write("Please, enter username and press Enter: ");
+        username = Console.ReadLine();
+
+        Console.WriteLine($"Hello, {username}!");
+    }
+}
