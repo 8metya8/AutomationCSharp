@@ -10,6 +10,7 @@
             Task4();
             Task5();
             Task6();
+            Task7();
         }
 
         public static void Task1()
@@ -288,6 +289,55 @@
 
                 Console.WriteLine($"A = {a}, B = {b}, C = {c}, D = {d}");
             }
+        }
+
+        public static void Task7()
+        {
+            //Поле шахматной доски определяется парой натуральных чисел, 
+            //каждое из которых не превосходит 8: первое – номер вертикали, второе – номер горизонтали. Заданы натуральные числа k, l, m, n.
+            //Определить, являются ли поля(k, l) и(m, n) одного цвета.
+            //На поле(k, l) расположен конь. Угрожает ли он полю(m, n)?
+
+            Console.WriteLine("\n----- Task 7 \"Chess\" -----\n");
+            Console.WriteLine("Enter coordinates for 1st chessman. Coordinate must be 1 - 8.");
+            Console.Write("X coordinate: ");
+            byte k = Convert.ToByte(Console.ReadLine());
+
+            Console.Write("Y coordinate: ");
+            byte l = Convert.ToByte(Console.ReadLine());
+
+            Console.WriteLine("\nEnter coordinates for 2st chessman.");
+            Console.Write("X coordinate: ");
+            byte m = Convert.ToByte(Console.ReadLine());
+
+            Console.Write("Y coordinate: ");
+            byte n = Convert.ToByte(Console.ReadLine());
+
+            //If both coordinates are even or both coordinates are odd, then  color is black. If one coordinate is even and another is odd, then color is white.
+            if ((((k % 2 == 0) && (l % 2 == 0)) || ((k % 2 != 0) && (l % 2 != 0))) && (((m % 2 == 0) && (n % 2 == 0)) || ((m % 2 != 0) && (n % 2 != 0))))
+            {
+                Console.WriteLine("\nBoth chessmans are on places with black color.");
+                Console.WriteLine($"The Knight on {k}, {l} is not  dangerous  for {m},{n}");
+            }
+            else if ((((k % 2 != 0) && (l % 2 == 0)) || ((k % 2 == 0) && (l % 2 != 0))) && (((m % 2 != 0) && (n % 2 == 0)) || ((m % 2 == 0) && (n % 2 != 0))))
+            {
+                Console.WriteLine("\nBoth chessmans are on places with white color.");
+                Console.WriteLine($"The Knight on {k}, {l} is not  dangerous  for {m},{n}");
+            }
+            else
+            {
+                Console.WriteLine("\nChessmans are on places with different color.");
+
+                if ( (((l+2) == n) || ((l - 2) == n)) && ((k+1 == m) || (k - 1 == m)))
+                {
+                    Console.WriteLine($"The Knight on {k}, {l} is dangerous  for {m},{n} on current move.");
+                }
+                else
+                {
+                    Console.WriteLine($"The Knight on {k}, {l} is not  dangerous  for {m},{n} on current move.");
+                }
+            }
+
         }
 
     }
