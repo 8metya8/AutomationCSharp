@@ -7,6 +7,7 @@
             Task1();
             Task2();
             Task3();
+            Task4();
         }
 
         public static void Task1()
@@ -69,37 +70,37 @@
             // Если да, то укажите, в какой именно промежуток.
             // Если пользователь указывает число, не входящее ни в один из имеющихся числовых промежутков, то выводится соответствующее сообщение.
 
-            Console.WriteLine("----- Task 2 \"Ranges\" -----\n");
+            Console.WriteLine("\n----- Task 2 \"Ranges\" -----\n");
             Console.Write("Enter a value from 0 to 100:");
 
             int number = Convert.ToInt32(Console.ReadLine());
 
-            if ((number >= 0) & (number <= 100))
+            if ((number >= 0) && (number <= 100))
                 {
-                if ((number >= 0) & (number <= 14))
+                if ((number >= 0) && (number <= 14))
                 {
-                    Console.Write("The value is in range [0 - 14].");
+                    Console.WriteLine("The value is in range [0 - 14].");
                 }
                 else if (number <= 35)
                 {
-                    Console.Write("The value is in range [15 - 35].");
+                    Console.WriteLine("The value is in range [15 - 35].");
                 }
                 else if (number <= 49)
                 {
-                    Console.Write("The value is in range [36 - 49].");
+                    Console.WriteLine("The value is in range [36 - 49].");
                 }
                 else if (number <= 100)
                 {
-                    Console.Write("The value is in range [50 - 100].");
+                    Console.WriteLine("The value is in range [50 - 100].");
                 }
                 else
                 {
-                    Console.Write("The value is in no one of range.");
+                    Console.WriteLine("The value is in no one of range.");
                 }
             }
             else
             {
-                Console.Write("The value is not in range [0 - 100].");
+                Console.WriteLine("The value is not in range [0 - 100].");
             }
                                                            
         }
@@ -115,7 +116,7 @@
             Console.InputEncoding = System.Text.Encoding.GetEncoding("utf-16");
             Console.OutputEncoding = System.Text.Encoding.GetEncoding("utf-16");
 
-            Console.WriteLine("----- Task 3 \"Dictionary\" -----\n");
+            Console.WriteLine("\n----- Task 3 \"Dictionary\" -----\n");
             Console.Write("Enter russion word (Topic is the weather.): ");
             string word = Console.ReadLine().ToLower();
 
@@ -154,6 +155,39 @@
                 default:
                     Console.WriteLine($"\nDictionary doesn't contain word '{word}'.");
                     break;
+            }
+        }
+
+        public static void Task4()
+        {
+            // Напишите программу, которая будет выполнять проверку чисел на четность.
+            // Предложите два варианта решения поставленной задачи.
+
+            Console.WriteLine("\n----- Task 4 \"Even\" -----\n");
+            Console.Write("Enter a number: ");
+            int number = Convert.ToInt16(Console.ReadLine());
+
+            //First way to solve 
+            if ((number % 2) == 0)
+            {
+                Console.WriteLine($"\n{number} is even number. ");
+            }
+            else
+            {
+                Console.WriteLine($"\n{number} is odd number. ");
+            }
+
+            //Second way to solve
+            // В двоичной системе у четного числа первый бит = 0 и если выполнить логическое умножение (&) на 1 (0001),
+            // то если число четное на выходе получим 0.
+            
+            if ((number & 1) == 0)
+            {
+                Console.WriteLine($"\n{number} is even number. ");
+            }
+            else
+            {
+                Console.WriteLine($"\n{number} is odd number. ");
             }
         }
 
