@@ -8,6 +8,8 @@
             Task2();
             Task3();
             Task4();
+            Task5();
+            Task6();
         }
 
         public static void Task1()
@@ -188,6 +190,103 @@
             else
             {
                 Console.WriteLine($"\n{number} is odd number. ");
+            }
+        }
+
+        public static void Task5()
+        {
+            //Даны x, y, z – вещественные числа. Существует ли треугольник с длинами сторон x, y, z? Если существует, то ответить, является ли он остроугольным.
+            
+            Console.WriteLine("\n----- Task 5 \"Triangle\" -----\n");
+            Console.Write("Enter 1st side of a triangle: ");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter 2nd side of a triangle: ");
+            double y = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter 3rd side of a triangle: ");
+            double z = Convert.ToDouble(Console.ReadLine());
+
+            if(((x + y) > z) && ((x + z) > y) && ((y + z) > x))
+            {
+                Console.WriteLine("The triangle is exist.");
+                
+                if ((x > y) && (x > z))
+                {
+                    if (Math.Pow(x, 2) < (Math.Pow(y, 2) + Math.Pow(z, 2)))
+                    {
+                        Console.WriteLine("The triangle is acute."); 
+                    }
+                    else
+                    {
+                        Console.WriteLine("The triangle is obtuse.");
+                    }
+                }
+                else if((y > x) && (y > z))
+                {
+                    if (Math.Pow(y, 2) < (Math.Pow(x, 2) + Math.Pow(z, 2)))
+                    {
+                        Console.WriteLine("The triangle is acute.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The triangle is obtuse.");
+                    }
+                }
+                else
+                {
+                    if (Math.Pow(z, 2) < (Math.Pow(x, 2) + Math.Pow(y, 2)))
+                    {
+                        Console.WriteLine("The triangle is acute.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The triangle is obtuse.");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("The triangle is not exist.");
+            }
+        }
+
+        public static void Task6()
+        {
+            //Даны вещественные числа a, b, c, d. Если a ≤ b ≤ c ≤ d, то каждое число заменить наибольшим,
+            //если a > b > c > d,  то числа оставить без изменений,
+            //в противном случае – все числа заменить их квадратами.
+
+            Console.WriteLine("\n----- Task 6 \"Numbers\" -----\n");
+            Console.Write("Enter 1st number: ");
+            double a = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter 2nd number: ");
+            double b = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter 3rd number: ");
+            double c = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter 4th number: ");
+            double d = Convert.ToDouble(Console.ReadLine());
+
+            if ((a <= b) && (b <= c) && (c <= d))
+            {
+                a = b = c = d;
+                Console.WriteLine($"A = {a}, B = {b}, C = {c}, D = {d}");
+            }
+            else if ((a > b) && (b > c) && (c > d))
+            {
+                Console.WriteLine($"A = {a}, B = {b}, C = {c}, D = {d}");
+            }
+            else
+            {
+                a = Math.Pow(a, 2);
+                b = Math.Pow(b, 2);
+                c = Math.Pow(c, 2);
+                d = Math.Pow(d, 2);
+
+                Console.WriteLine($"A = {a}, B = {b}, C = {c}, D = {d}");
             }
         }
 
