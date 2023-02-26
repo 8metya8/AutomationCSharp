@@ -4,7 +4,18 @@
     {
         static void Main(string[] args)
         {
+            Task0();
+            Task1();
+            Task2();
+            Task3();
+            Task4();
+            Task5();
+            Task6();
+            Task7();
             Task8();
+            Task9();
+            Task10();
+            Task11();
         }
 
         /// <summary>
@@ -46,7 +57,7 @@
         {
             int[] array = { 5, 6, 7, 8, 9, 10, 11, 12 };
 
-            Console.WriteLine("----- Task 1 \"Delete number from array.\" -----\n");
+            Console.WriteLine("\n----- Task 1 \"Delete number from array.\" -----\n");
             Console.Write("Enter any integer number: ");
             int number = Convert.ToInt32(Console.ReadLine());
 
@@ -95,7 +106,7 @@
         /// </summary>
         public static void Task2()
         {
-            Console.WriteLine("----- Task 2 \"Max,min and avg number in array.\" -----\n");
+            Console.WriteLine("\n----- Task 2 \"Max,min and avg number in array.\" -----\n");
             Console.Write("Enter size of array: ");
             int size = Convert.ToInt32(Console.ReadLine());
 
@@ -136,7 +147,7 @@
         /// </summary>
         public static void Task3()
         {
-            Console.WriteLine("----- Task 2 \"Two arrays and avg.\" -----\n");
+            Console.WriteLine("\n----- Task 3 \"Two arrays and avg.\" -----\n");
             
             int[] firstArray = new int[5];
             int[] secondArray = new int[5];
@@ -184,7 +195,7 @@
         /// </summary>
         public static void Task4()
         {
-            Console.WriteLine("----- Task 4 \"Array and even array.\" -----");
+            Console.WriteLine("\n----- Task 4 \"Array and even array.\" -----");
             
             int size = 0;
             bool isRightSize = false;
@@ -264,7 +275,7 @@
         /// </summary>
         public static void Task5()
         {
-            Console.WriteLine("----- Task 5 \"Array and odd index.\" -----\n");
+            Console.WriteLine("\n----- Task 5 \"Array and odd index.\" -----\n");
 
             int[] numbers = new int[10];
             Random random = new Random();
@@ -295,7 +306,7 @@
         /// </summary>
         public static void Task6()
         {
-            Console.WriteLine("----- Task 6 \"Array of names.\" -----\n");
+            Console.WriteLine("\n----- Task 6 \"Array of names.\" -----\n");
 
             string[] names = { "Liam", "Olivia", "Noah", "Emma", "Oliver", "Charlotte", "Elijah", "Amelia", "James", "Ava" };
 
@@ -319,7 +330,7 @@
         /// </summary>
         public static void Task7()
         {
-            Console.WriteLine("----- Task 7 \"Bubиle.\" -----\n");
+            Console.WriteLine("\n----- Task 7 \"Bubble.\" -----\n");
 
             int[] numbers = new int[15];
             Random random = new Random();
@@ -360,7 +371,53 @@
         /// </summary>
         public static void Task8()
         {
-            
+            Console.WriteLine("\n----- Task 8 \"Matrix multiplication.\" -----\n");
+
+            int[,] firstMatrix = new int[,] { { 1, 0, 0, 0 }, { 0, 1, 0, 0 }, { 0, 0, 0, 0 } };
+            int[,] secondMatrix = new int[,] { { 1, 2, 3 }, { 1, 1, 1 }, { 0, 0, 0 }, { 2, 1, 0 } };
+            int[,] result = new int[3, 3];
+
+            Console.WriteLine("The first matrix:");
+            for (int i = 0; i < firstMatrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < firstMatrix.GetLength(1); j++)
+                {
+                    Console.Write(firstMatrix[i, j] + " ");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("The second matrix:");
+            for (int i = 0; i < secondMatrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < secondMatrix.GetLength(1); j++)
+                {
+                    Console.Write(secondMatrix[i, j] + " ");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Result of multiplication:");
+
+            int sum = 0;
+            for (int i = 0; i < firstMatrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < firstMatrix.GetLength(0); j++)
+                {
+                    for(int n = 0; n < secondMatrix.GetLength(0); n++)
+                    {
+                        sum += firstMatrix[i, n] * secondMatrix[n, j];
+                    }
+
+                    result[i, j] = sum;
+                    Console.Write(result[i, j] + " ");
+                    sum = 0;
+                }
+
+                Console.WriteLine();
+            }
         }
 
         /// <summary>
@@ -368,7 +425,7 @@
         /// </summary>
         public static void Task9()
         {
-            Console.WriteLine("----- Task 9 \"Multidimensional array.\" -----\n");
+            Console.WriteLine("\n----- Task 9 \"Multidimensional array.\" -----\n");
 
             int[,] numbers = new int[4,7];
             int sum = 0;
@@ -395,7 +452,7 @@
         /// </summary>
         public static void Task10()
         {
-            Console.WriteLine("----- Task 10 \"Multidimensional array - diagonals.\" -----\n");
+            Console.WriteLine("\n----- Task 10 \"Multidimensional array - diagonals.\" -----\n");
 
             int[,] numbers = new int[7, 7];
             int sum = 0;
@@ -432,7 +489,7 @@
         /// </summary>
         public static void Task11()
         {
-            Console.WriteLine("----- Task 11 \"Multidimensional array - diagonals.\" -----\n");
+            Console.WriteLine("\n----- Task 11 \"Multidimensional array - diagonals.\" -----\n");
 
             int[,] numbers = new int[3, 5];
             int sum = 0;
