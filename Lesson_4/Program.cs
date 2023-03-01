@@ -1,4 +1,6 @@
-﻿namespace Lesson_4
+﻿using System.Text.RegularExpressions;
+
+namespace Lesson_4
 {
     internal class Program
     {
@@ -8,6 +10,7 @@
             Task2();
             Task3();
             Task4();
+            Task5();
         }
 
         /// <summary>
@@ -18,10 +21,11 @@
         {
             Console.WriteLine("----- Task 1 \"Replace and remove\" -----\n");
 
-            string str = "test1 create new test and start regression test 10";
+            string str = "Test 1. Create new test and start regression test 10";
             Console.WriteLine("Default string: '" + str + "'");
 
-            string resultOfReplace = str.Replace("test", "testing");
+            Regex regex = new Regex("test", RegexOptions.IgnoreCase);
+            string resultOfReplace = regex.Replace(str, "testing");
             Console.WriteLine("String after replace: '" + resultOfReplace + "'");
 
             string resultOfRemoveDigits = "";
@@ -97,6 +101,19 @@
 
             Console.WriteLine("Defaul string - " + defaultString);
             Console.WriteLine("Result - " + subString);
+        }
+
+        public static void Task5()
+        {
+            Console.WriteLine("\n----- Task 5 \"Number Of Document\" -----\n");
+
+            NumberOfDocument.ShowTwoFirstBloksOfDigital("1234-QWE-5678-RTY-9U0I");
+            NumberOfDocument.ShowPartialNumber("1234-QWE-5678-RTY-9U0I");
+            NumberOfDocument.ShowLetters("1234-QWE-5678-RTY-9U0I");
+            NumberOfDocument.ShowLettersStringBuilder("1234-asd-5678-fgh-9j0k");
+            NumberOfDocument.FindSubstring("1234-aBc-5678-RBY-9U0I");
+            NumberOfDocument.CheckFirstDigits("5551-QWE-5678-RTY-9U0I");
+            NumberOfDocument.CheckLastSymbols("5551-QWE-5678-RTY-1a2B");
         }
     }
 }
