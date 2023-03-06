@@ -45,7 +45,7 @@
                 countOfBanknote50 = countOfBanknote50 > banknote50 ? banknote50 : countOfBanknote50;
                 amount -= 50 * countOfBanknote50;
                
-                if( (amount > 0) && (amount < 20) && (countOfBanknote50 > 0))
+                if( (amount % 20 == 10) && (countOfBanknote50 > 0))
                 {
                     countOfBanknote50--;
                     amount += 50;
