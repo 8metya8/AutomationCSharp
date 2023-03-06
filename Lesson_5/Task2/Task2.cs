@@ -14,6 +14,8 @@
         /// </summary>
         public static void HWTask2()
         {
+            Console.WriteLine("\n----- Task 2 -----\n");
+
             CreditCard creditCard = new CreditCard("1234 5678 9101 1111", 1552.22);
             CreditCard creditCard2 = new CreditCard("1234 5678 9101 2222", 1852.22);
             CreditCard creditCard3 = new CreditCard("1234 5678 9101 3333", 6552.22);

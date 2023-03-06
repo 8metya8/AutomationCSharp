@@ -19,6 +19,8 @@
         /// </summary>
         public static void HWTask1()
         {
+            Console.WriteLine("----- Task 1 -----\n");
+
             Phone phone = new Phone("+375(29)842-41-33", "Huawei P40", 0.192);
             Phone phone2 = new Phone("+375(29)111-22-33", "iPhone 14", 0.202);
             Phone phone3 = new Phone("+375(29)444-55-66", "Xiaomi Note 12", 0.175);
