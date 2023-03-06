@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lesson_5
+﻿namespace Lesson_5
 {
     /// <summary>
     /// Класс Phone.  
