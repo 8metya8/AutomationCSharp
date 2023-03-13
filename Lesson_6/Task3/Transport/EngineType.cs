@@ -1,6 +1,6 @@
 ﻿namespace Lesson_6
 {
-    public enum EngineTypeOfTransport
+    public enum EngineType
     {
         Electric,
         Hybrid,

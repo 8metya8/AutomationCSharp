@@ -1,18 +1,22 @@
 ﻿namespace Lesson_6
 {
-    internal class Transport
+    internal abstract class Transport
     {
-        public EngineTypeOfTransport EngineType { get; set; }
+        protected EngineType EngineType { get; set; }
+        protected ModesOfTransport ModesOfTransport { get; set; }
 
-        public Transport(EngineTypeOfTransport engineType) 
+        public EngineType GetEngineType()
         {
-            this.EngineType = engineType;
+            return EngineType;
+        }
+        public ModesOfTransport GetMode()
+        {
+            return ModesOfTransport;
         }
 
-        public virtual EngineTypeOfTransport GetEngineType()
+        public virtual string GetTransportType()
         {
-            return EngineTypeOfTransport.Unknown;
+            return $"{ModesOfTransport} transport with {EngineType} engine.";
         }
-
     }
 }

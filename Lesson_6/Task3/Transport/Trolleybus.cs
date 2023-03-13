@@ -2,14 +2,14 @@
 {
     internal class Trolleybus : PublicTransport
     {
-        public Trolleybus(int countOfSeats, string number, string destinationStation, DateTime departureTime, EngineTypeOfTransport engineType)
-            : base(countOfSeats, number, destinationStation, departureTime, engineType)
+        public Trolleybus(EngineType engineType, ModesOfTransport modesOfTransport, int countOfSeats, string number, string destinationStation, DateTime departureTime)
+            : base(engineType, modesOfTransport, countOfSeats, number, destinationStation, departureTime)
         {
 
         }
         public override string GetTransportType()
         {
-            return "Trolleybus";
+            return $"Trolleybus is {base.GetTransportType()}";
         }
     }
 }

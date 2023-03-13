@@ -21,21 +21,22 @@
         {
             Console.WriteLine("\n----- Task 3 -----\n");
 
-            PublicTransport[] publicTransports = { new Bus(52, "55a", "Warsaw", new DateTime().AddHours(15).AddMinutes(45), EngineTypeOfTransport.ICE),
-                                                   new Bus(33, "155", "Berlin", new DateTime().AddHours(8), EngineTypeOfTransport.Hybrid),
-                                                   new Tram(45, "6", "Minsk", new DateTime().AddHours(19).AddMinutes(35), EngineTypeOfTransport.Electric),
-                                                   new Trolleybus(40, "33", "Brest", new DateTime().AddHours(18).AddMinutes(30), EngineTypeOfTransport.Electric)};
+            PublicTransport[] publicTransports = { new Bus(EngineType.ICE, ModesOfTransport.Road, 52, "55a", "Warsaw", new DateTime().AddHours(15).AddMinutes(45)),
+                                                   new Bus(EngineType.Hybrid, ModesOfTransport.Road, 33, "155", "Berlin", new DateTime().AddHours(8)),
+                                                   new Tram(EngineType.Electric, ModesOfTransport.Rail,45, "6", "Minsk", new DateTime().AddHours(19).AddMinutes(35)),
+                                                   new Trolleybus(EngineType.Electric, ModesOfTransport.Road, 40, "33", "Brest", new DateTime().AddHours(18).AddMinutes(30)),
+                                                   new Trolleybus(EngineType.Electric, ModesOfTransport.Road, 35, "33", "Minsk", new DateTime().AddHours(15).AddMinutes(30))};
 
+            //Sort by count of seats
             PublicTransport.Sort(publicTransports);
 
             foreach (var transport in publicTransports)
             {
-                Console.WriteLine("--------------------------------");
-                Console.WriteLine($"This is {transport.GetTransportType()}, engine - {transport.GetEngineType()}");
+                Console.WriteLine("--------------Sort by count of seats------------------");
                 Console.WriteLine($"Number - {transport.Number} \nDestination - {transport.DestinationStation} \nDepartue time - {transport.DepartureTime.ToShortTimeString()} \nCount of sits - {transport.CountOfSeats}");
             }
 
-            Console.WriteLine("--------------------------------");
+            Console.WriteLine("-------------Print Transport Type-------------------");
             foreach (var transport in publicTransports)
             {
                 TransportService.PrintTransportType(transport);
@@ -51,6 +52,7 @@
             IList<PublicTransport> findedPublicTransports = new List<PublicTransport>();
             DateTime searchTime;
 
+            //Checks parameters "Time" and "Destination" and choose search method
             if (string.IsNullOrEmpty(destination))
             {
                 if(!string.IsNullOrEmpty(time))
@@ -72,6 +74,7 @@
                 findedPublicTransports = PublicTransport.SearchByTimeAndDestination(publicTransports, searchTime, destination);
             }
 
+            //Shows find transport
             ShowVariants(findedPublicTransports);
 
             Console.WriteLine("-------------- Search after Time ------------------");
@@ -93,6 +96,7 @@
                 Console.WriteLine("We found follow variants:");
                 foreach (var transport in findedPublicTransports)
                 {
+                    Console.WriteLine(transport.GetType().Name);
                     Console.WriteLine($"Number - {transport.Number} \nDestination - {transport.DestinationStation} \nDepartue time - {transport.DepartureTime.ToShortTimeString()} \nCount of sits - {transport.CountOfSeats}");
                     Console.WriteLine("--------------------------------");
                 }
