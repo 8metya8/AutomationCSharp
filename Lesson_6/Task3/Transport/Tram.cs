@@ -2,15 +2,15 @@
 {
     internal class Tram : PublicTransport
     {
-        public Tram(int countOfSeats, string number, string destinationStation, DateTime departureTime, EngineTypeOfTransport engineType)
-            : base(countOfSeats, number, destinationStation, departureTime, engineType)
+        public Tram(EngineType engineType, ModesOfTransport modesOfTransport, int countOfSeats, string number, string destinationStation, DateTime departureTime)
+            : base(engineType, modesOfTransport, countOfSeats, number, destinationStation, departureTime)
         {
 
         }
 
         public override string GetTransportType()
         {
-            return "Tram";
+            return $"Tram is {base.GetTransportType()}";
         }
     }
 }
