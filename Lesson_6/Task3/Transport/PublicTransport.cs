@@ -1,28 +1,20 @@
 ﻿namespace Lesson_6
 {
     internal class PublicTransport : Transport
-    {
-        public int CountOfSeats { get; }
+    {    
+        public int CountOfSeats { get; set; }
         public string Number { get; set; }
         public string DestinationStation { get; set; }
         public DateTime DepartureTime { get; set; }
 
-        public PublicTransport(int countOfSeats, string number, string destinationStation, DateTime departureTime, EngineTypeOfTransport engineType) : base(engineType)
+        public PublicTransport(EngineType engineType, ModesOfTransport modesOfTransport, int countOfSeats, string number, string destinationStation, DateTime departureTime )
         { 
+            this.EngineType = engineType;
+            this.ModesOfTransport = modesOfTransport;
             this.CountOfSeats = countOfSeats;
             this.Number = number;
             this.DestinationStation = destinationStation;
             this.DepartureTime = departureTime;
-        }
-
-        public sealed override EngineTypeOfTransport GetEngineType()
-        {
-            return EngineType;
-        }
-
-        public virtual string GetTransportType()
-        {
-            return "Public transport";
         }
 
         /// <summary>
