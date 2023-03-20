@@ -13,6 +13,7 @@ namespace Lesson_9
         /// </summary>
         public static void Task_ArrayException()
         {
+            Console.WriteLine("----- Task 0 Array Exception -----");
             try
             {
                 ArrayList list = new ArrayList();
@@ -35,6 +36,8 @@ namespace Lesson_9
         /// </summary>
         public static void Task_Dictionary()
         {
+            Console.WriteLine("\n----- Task 0 Dictionary -----");
+
             Dictionary<object, object> dictionary = new Dictionary<object, object>();
             dictionary.Add("One", 1);
             dictionary.Add(2, "Two");

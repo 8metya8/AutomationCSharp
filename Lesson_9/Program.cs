@@ -9,6 +9,10 @@
             Task0.Task_Dictionary();
 
             //HW Task 1
+            Task1.HWTask1();
+            Task1.HWTask1_1();
+            Task1.HWTask1_2();
+            Task1.HWTask1_3();
         }
     }
 }
