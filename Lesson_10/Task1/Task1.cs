@@ -11,13 +11,10 @@
         {
             Console.WriteLine("----- Task 1 - Array -----");
 
-            ArrayGeneric<string> array = new ArrayGeneric<string>();
+            ArrayGeneric<string> array = new ArrayGeneric<string>(new string[]{"element1", "element2", "element3" });
 
             Console.WriteLine($"Lenght of array - {array.Lenght()}");
 
-            array.Add("element1");
-            array.Add("element2");
-            array.Add("element3");
             array.Add("element2");
             array.Add("element4");
 

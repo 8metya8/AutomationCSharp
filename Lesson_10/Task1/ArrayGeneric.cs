@@ -11,9 +11,9 @@ namespace Lesson_10
     {
         T[] array;
 
-        public ArrayGeneric()
+        public ArrayGeneric(T[] array)
         {
-            array = new T[0];
+            this.array = array;
         }
 
         /// <summary>
