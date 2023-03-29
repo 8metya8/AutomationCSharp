@@ -19,27 +19,17 @@
         /// <param name="intArray"></param>
         public static void OrderArray(int[] intArray)
         {
-            //Get count of zero in array and print old array
-            Console.Write("\nOld array - ");
-            int countOfZero = 0;
-            foreach(int i in intArray)
+            //Find zero and set it to the left
+            int indexOfZero = 0;
+
+            for (int i = 0; i < intArray.Length; i++)
             {
-                if(i == 0)
+                if(intArray[i] == 0)
                 {
-                    countOfZero++;
+                    intArray[i] = 1;
+                    intArray[indexOfZero] = 0;
+                    indexOfZero++;
                 }
-
-                Console.Write(i + " ");
-            }
-
-            //Add zeros in start of new array and print it
-            Console.Write("\nNew array - ");
-            int[] orderedArray = new int[intArray.Length];
-            for(int i = 0; i < orderedArray.Length; i++)
-            {
-                orderedArray[i] = countOfZero > 0 ? 0 : 1;
-                countOfZero--;
-                Console.Write(orderedArray[i] + " ");
             }
         }
     }
