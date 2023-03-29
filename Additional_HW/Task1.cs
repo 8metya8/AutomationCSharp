@@ -19,28 +19,19 @@
         {
             array = intArray;
 
-            //Get max element and average value.
+            //Get max element and second max
             var max = array[0];
-            var sum = 0;
+            var secondMax = array[0];
+
             for (int i = 0; i < array.Length; i++)
             {
-                if(array[i] > max)
-                {
-                    max = array[i];
+                if (array[i] > max)
+                {                    
+                    max = array[i];                    
                 }
-
-                sum += array[i];
-            }
-
-            var avg = sum / array.Length;
-
-            //Search max element between Max and Avg 
-            var secondMax = 0;
-            foreach (int i in array)
-            {
-                if((i > avg) && (i < max) && (i > secondMax))
+                else if ((array[i] > secondMax) && (array[i] != max))
                 {
-                    secondMax = i;
+                    secondMax = array[i]; ;
                 }
             }
 
