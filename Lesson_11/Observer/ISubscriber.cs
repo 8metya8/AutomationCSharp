@@ -1,0 +1,7 @@
+﻿namespace Lesson_11
+{
+    internal interface ISubscriber
+    {
+        void Update(Object ob);
+    }
+}
