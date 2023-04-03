@@ -3,30 +3,16 @@
     internal class Flat : IObservable
     {
         List<ISubscriber> subscribers;
-        string address;
-        int price;
 
-        public int Price
-        {
-            get
-            {
-                return price;
-            }
-        }
+        public int Price { get; set; }
 
-        public string Address
-        {
-            get
-            {
-                return address;
-            }
-        }
+        public string Address { get; }
 
         public Flat(string address, int price)
         {
             subscribers = new List<ISubscriber>();
-            this.address = address;
-            this.price = price;
+            this.Address = address;
+            this.Price = price;
         }
 
         public void AddObserver(ISubscriber subscriber)
@@ -51,7 +37,7 @@
 
         public void SetNewPrice(int newPrice)
         {
-            price = newPrice;
+            Price = newPrice;
             
             NotifySubscribers();
         }

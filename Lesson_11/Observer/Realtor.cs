@@ -9,10 +9,8 @@
             ExpectedPrice = expectedPrice;
         }
 
-        public void Update(Object obj)
+        public void Update(Flat flat)
         {
-            Flat flat = (Flat)obj;
-
             if( (flat.Price < ExpectedPrice) || (flat.Price == ExpectedPrice))
             {
                 Console.WriteLine("Price has been decreased!");

@@ -2,6 +2,6 @@
 {
     internal interface ISubscriber
     {
-        void Update(Object ob);
+        void Update(Flat flat);
     }
 }
