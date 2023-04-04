@@ -61,11 +61,8 @@
         /// <returns></returns>
         public bool ExpirationСheck()
         {
-            if(dateOfManufacture.AddMonths(shelfLife) > DateTime.Now)
-            {
-                return false;
-            }
-            return true;
+          return dateOfManufacture.AddMonths(shelfLife) < DateTime.Now;
+   
         }
 
         public void ShowInfo()
